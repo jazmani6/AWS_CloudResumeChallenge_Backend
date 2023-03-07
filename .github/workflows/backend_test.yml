@@ -111,7 +111,8 @@ jobs:
         uses: actions/checkout@v3
       # Install NPM dependencies, cache them correctly
       # and run all Cypress tests
-        run: npm i cypress
+        
+      - run: npm i cypress
 
       - name: Cypress run
         uses: cypress-io/github-action@v5.1.0 # use the explicit version number
