@@ -81,7 +81,7 @@ jobs:
         
       run: |
         cd './Terraform'
-        terraform init -input=false
+        terraform init -backend-config="access_key=${{ secrets.AWS_ACCESS_KEY_ID }}" -backend-config="secret_key=${{ secrets.AWS_SECRET_ACCESS_KEY }}" -backend-config="region=${{ secrets.AWS_REGION }}" 
 
 
     # Generates an execution plan for Terraform
