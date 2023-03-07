@@ -112,8 +112,6 @@ jobs:
         
         with:
           browser: chrome
-          record: true
-          working-directory: cypress/
         env:
           # pass GitHub token to detect new build vs re-run build
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
