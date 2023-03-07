@@ -67,6 +67,7 @@ jobs:
       with:
         role-to-assume: ${{ secrets.AWS_ROLE }}
         aws-region: ${{ secrets.AWS_REGION }}
+        role-session-name: GitHub-OIDC-TERRAFORM
 
     # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
     - name: Setup Terraform
@@ -77,7 +78,7 @@ jobs:
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        role-session-name: GitHub-OIDC-TERRAFORM
+        
       run: |
         cd './Terraform'
         terraform init
@@ -110,9 +111,11 @@ jobs:
         uses: actions/checkout@v3
       # Install NPM dependencies, cache them correctly
       # and run all Cypress tests
+        run: npm i cypress
 
       - name: Cypress run
-        uses: cypress-io/github-action@v5 # use the explicit version number
+        uses: cypress-io/github-action@v5.1.0 # use the explicit version number
+        
         with:
           build: npm run build
           start: npm start
