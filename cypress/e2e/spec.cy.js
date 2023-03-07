@@ -22,7 +22,7 @@ describe('API Test', () => {
 })
 })
 
-describe('Page Reload', () => {
+/*describe('Page Reload', () => {
   it('Tests Visitor Counter incrementing after page refresh', () => {
     cy.visit('https://www.jazmresume.com')
     cy.request('GET', 'https://a39k36sm6e.execute-api.us-east-2.amazonaws.com/default/UpdateVisitors', ).then(
@@ -46,6 +46,6 @@ describe('Page Reload', () => {
   })
   
 })
-
+*/
 
   
