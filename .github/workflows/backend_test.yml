@@ -100,6 +100,9 @@ jobs:
         terraform apply -auto-approve -input=false
   
   cypress-run:
+    defaults:
+      run:
+        working-directory: ./cypress
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -113,7 +116,6 @@ jobs:
           build: npm run build
           start: npm start
           record: true
-          working-directory: cypress/
         env:
           # pass GitHub token to detect new build vs re-run build
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
