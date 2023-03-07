@@ -92,7 +92,7 @@ jobs:
       if: github.ref == 'refs/heads/"main"' && github.event_name == 'push'
       run: |
         cd './Terraform'
-        terraform apply -auto-approve -input=false
+        terraform apply --auto-approve -input=false
   
   cypress-run:
     defaults:
