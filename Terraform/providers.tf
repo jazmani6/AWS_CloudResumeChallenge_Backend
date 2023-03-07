@@ -15,5 +15,5 @@ terraform {
 
  provider "aws" {
   region = "us-east-2"
-  profile                  = "Jaz.Admin"
+  profile = "Jaz.Admin"
 }
