@@ -77,6 +77,7 @@ jobs:
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        role-session-name: GitHub-OIDC-TERRAFORM
       run: |
         cd './Terraform'
         terraform init
@@ -116,3 +117,6 @@ jobs:
           build: npm run build
           start: npm start
           record: true
+        env:
+          # pass GitHub token to detect new build vs re-run build
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
