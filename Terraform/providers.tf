@@ -9,13 +9,13 @@ terraform {
     bucket = "jmresume.com"
     key    = "global/s3/terraform.tfstate"
     region = "us-east-2"
-    
+    profile = "Jaz.Admin"
     
   }
 }
 
  provider "aws" {
   region = "us-east-2"
- 
+  profile = "Jaz.Admin"
   
 }
