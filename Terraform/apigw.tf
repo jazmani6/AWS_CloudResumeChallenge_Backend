@@ -1,5 +1,5 @@
 resource "aws_api_gateway_rest_api" "api-gateway" {
- name = "api-gateway-updated"
+ name = "api-gateway"
  description = "Handles Post Requests to update Visitor Counter DynamoDB Table"
 
  endpoint_configuration {
